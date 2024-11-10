@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Task List App</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        #progress {
+            text-align: center;
+            margin: 10px 0;
+        }
+        .task {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .task.completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+        .task input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .task button {
+            background: none;
+            border: none;
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Task List</h1>
+
+    <!-- Progress Tracker -->
+    <div id="progress">Progress: 0%</div>
+
+    <!-- Task Input -->
+    <div>
+        <input type="text" id="taskInput" placeholder="Enter a new task">
+        <input type="date" id="taskDueDate">
+        <select id="taskPriority">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+        <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <!-- Task Filters and Options -->
+    <div style="margin-top: 10px;">
+        <button onclick="setFilter('all')">All</button>
+        <button onclick="setFilter('completed')">Completed</button>
+        <button onclick="setFilter('incomplete')">Incomplete</button>
+        <button onclick="clearCompletedTasks()">Clear Completed</button>
+    </div>
+
+    <!-- Search Tasks -->
+    <div style="margin-top: 10px;">
+        <input type="text" placeholder="Search tasks" oninput="searchTasks(this.value)">
+    </div>
+
+    <!-- Sort Options -->
+    <div style="margin-top: 10px;">
+        <button onclick="sortBy('date')">Sort by Date</button>
+        <button onclick="sortBy('priority')">Sort by Priority</button>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <div style="margin-top: 10px;">
+        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </div>
+
+    <!-- Task List -->
+    <ul id="taskList"></ul>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
