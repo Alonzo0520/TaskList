@@ -1,0 +1,199 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9fafc;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+/* Title */
+h1 {
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1a73e8;
+}
+
+/* Progress Tracker */
+#progress {
+    text-align: center;
+    margin: 10px 0 20px;
+    color: #666;
+    font-weight: bold;
+}
+
+/* Task Input */
+.task-input {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.task-input input[type="text"],
+.task-input input[type="date"],
+.task-input select {
+    padding: 10px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    flex: 1;
+}
+
+.task-input button {
+    background-color: #1a73e8;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    min-width: 60px;
+}
+
+.task-input button:hover {
+    background-color: #155bb5;
+}
+
+/* Task Controls */
+.task-controls,
+.search-bar,
+.sort-options {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.task-controls button,
+.sort-options button {
+    background-color: #f0f4f8;
+    color: #333;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.task-controls button:hover,
+.sort-options button:hover {
+    background-color: #e0e8f0;
+}
+
+/* Search Bar */
+.search-bar input {
+    padding: 10px;
+    width: 100%;
+    font-size: 0.9em;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Task List */
+.task-list {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f0f4f8;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.task.high-priority {
+    border-left: 4px solid #f44336; /* Red for high priority */
+}
+
+.task.medium-priority {
+    border-left: 4px solid #ffb300; /* Yellow for medium priority */
+}
+
+.task.low-priority {
+    border-left: 4px solid #4caf50; /* Green for low priority */
+}
+
+.task.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.task button {
+    background: none;
+    border: none;
+    color: #f44336;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #f4f4f4;
+}
+
+body.dark-mode .container {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+}
+
+body.dark-mode #progress {
+    color: #bbb;
+}
+
+body.dark-mode .task-input input,
+body.dark-mode .task-input select,
+body.dark-mode .search-bar input {
+    background-color: #333;
+    color: #f4f4f4;
+    border: 1px solid #444;
+}
+
+body.dark-mode .task-controls button,
+body.dark-mode .sort-options button {
+    background-color: #333;
+    color: #f4f4f4;
+    border: 1px solid #444;
+}
+
+/* Adjustments for Task List in Dark Mode */
+body.dark-mode .task {
+    background-color: #2a2a2a;
+    color: rgb(0, 0, 0); /* Lighter text for better readability */
+    border-left-color: #888; /* Softer border for priority indication */
+}
+
+body.dark-mode .task.completed {
+    color: #888; /* Dimmed color for completed tasks */
+}
