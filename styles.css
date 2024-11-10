@@ -187,7 +187,6 @@ body.dark-mode .sort-options button {
     border: 1px solid #444;
 }
 
-/* Adjustments for Task List in Dark Mode */
 body.dark-mode .task {
     background-color: #2a2a2a;
     color: rgb(0, 0, 0); /* Lighter text for better readability */
